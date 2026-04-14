@@ -1,0 +1,62 @@
+.playerButtons {
+  background: transparent;
+}
+
+.container {
+  display: flex;
+
+  width: 100%;
+  background: transparent;
+}
+
+.controls {
+  display: flex;
+
+}
+
+.playerButton {
+  background: transparent;
+}
+
+.playerTrackContainer {
+  width:50%;
+}
+
+.audioProgress {
+  width: 100%;
+  height: 11px;
+}
+
+
+
+.trackInfoText {
+  margin: 0 0 0 7px;
+  display: flex;
+  flex-direction: column;
+}
+
+.playerCoverPic {
+  height: 75%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.songTitle {
+  color: #ffffff;
+  font-size: 12px;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+.artistName {
+  color: #cfcfcf;
+  font-size: 10px;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+.trackInfo {
+  margin: 0 0 0 5px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}

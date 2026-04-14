@@ -1,0 +1,35 @@
+.modalButtonsWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.uploadInput {
+  display: none;
+}
+
+.uploadWindow {
+  display: inline-block;
+  border: 1px dashed #1a42ff;
+  background-color: #dadada;
+}
+
+.uploadWindowDragging {
+
+}
+
+.uploadWindowWrapper{
+  height: 100px;
+  width: 100%;
+}
+
+.uploadSong {
+  display: flex;
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+}
+
+.upload input {
+  display: none;
+}

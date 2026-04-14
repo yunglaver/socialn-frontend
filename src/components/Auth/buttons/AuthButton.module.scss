@@ -1,0 +1,16 @@
+.button {
+  background-color: cornflowerblue;
+  border-radius: 9px;
+  width: 270px;
+  height: 40px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+.button:hover {
+  background-color: darkviolet;
+}
+

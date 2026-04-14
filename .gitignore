@@ -9,7 +9,8 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 
-node_modules
-dist
-.env
+
 .DS_Store
+.idea/
+dist/
+node_modules/

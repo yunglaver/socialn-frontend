@@ -1,0 +1,109 @@
+@use '../../assets/media' as *;
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+
+
+  @include mobile {
+    height: 260px;
+    width: 300px;
+  }
+
+  @include laptop {
+
+  }
+
+  @include tablet {
+    height: 350px;
+    width: 550px;
+  }
+
+  @include desktop {
+
+  }
+}
+
+.title {
+  color: darkgrey;
+
+  @include mobile {
+    font-size: 50px;
+    margin: 8px;
+  }
+
+  @include laptop {
+
+  }
+
+  @include tablet {
+    font-size: 65px;
+    margin: 15px;
+  }
+
+  @include desktop {
+
+  }
+}
+
+.background {
+  background-image: url("../../assets/images/background.png");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.blur__filter {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.05); /* Почти прозрачный */
+  backdrop-filter: blur(12px);          /* Радиус размытия */
+  -webkit-backdrop-filter: blur(10px); /* Для поддержки Safari */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputs__wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-around;
+
+  @include mobile {
+    height: 110px;
+  }
+
+  @include laptop {
+
+  }
+
+  @include tablet {
+
+  }
+
+  @include desktop {
+
+  }
+
+
+}
+
+.buttons__wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 110px;
+  justify-content: space-around;
+}
+
+.auth__container {
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

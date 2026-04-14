@@ -1,0 +1,68 @@
+@use '../../../assets/media' as *;
+
+.button {
+  cursor: pointer;
+  background: white;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+
+  @include mobile {
+
+  }
+
+  @include laptop {
+
+  }
+
+  @include tablet {
+
+  }
+
+  @include desktop {
+
+  }
+}
+
+.button:hover {
+  background: #f4f4f4;
+}
+
+.text {
+  color: black;
+
+
+  @include tablet {
+    font-size: 13px;
+  }
+
+  @include desktop {
+
+  }
+}
+
+.active {
+  background: #e4e4e4;
+}
+
+.button__container {
+
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  margin: 0 10px 0 10px;
+
+  @include tablet {
+    width: 25px;
+    height: 25px;
+  }
+
+  @include desktop {
+
+  }
+}
+
+

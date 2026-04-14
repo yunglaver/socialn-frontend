@@ -1,0 +1,25 @@
+.container {
+
+}
+
+.songs {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.musicTabButton {
+  cursor: pointer;
+  background: white;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+}
+
+.active {
+  background-color: #bdbdbd;
+}
+
+.buttonContainer {
+  display: flex;
+}

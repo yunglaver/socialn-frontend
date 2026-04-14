@@ -1,0 +1,42 @@
+@use '../../assets/media' as *;
+
+.wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  width: 100%;
+}
+
+.sidebar {
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+}
+
+.main__wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  @include laptop {
+
+  }
+
+  @include tablet {
+    width: 1024px;
+  }
+
+  @include desktop {
+
+  }
+}
+
+.contentWrapper {
+  display: flex;
+}
