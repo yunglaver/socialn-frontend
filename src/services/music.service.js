@@ -1,9 +1,10 @@
 import {apiFetch} from "../core/api.js";
 
-export async function getMyMusic() {
+export async function getMyMusic(page = 1) {
     const token = localStorage.getItem('token');
+
     const response = await apiFetch(
-        `/music/my`,
+        `/music/my?page=${page}&limit=20`,
         {
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -14,10 +15,11 @@ export async function getMyMusic() {
     return await response.json();
 }
 
-export async function getOtherMusic() {
+export async function getOtherMusic(page = 1) {
     const token = localStorage.getItem('token');
+
     const response = await apiFetch(
-        `/music/all`,
+        `/music/all?page=${page}&limit=20`,
         {
             headers: {
                 'Authorization': `Bearer ${token}`

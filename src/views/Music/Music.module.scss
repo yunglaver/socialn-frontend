@@ -3,8 +3,16 @@
 }
 
 .songs {
-  display: flex;
-  flex-direction: column-reverse;
+}
+
+.parentScrollBlock {
+  overflow: auto;
+  scrollbar-width: none;
+  height: calc(100vh - 150px);
+}
+
+.parentScrollBlock::-webkit-scrollbar {
+  display: none;
 }
 
 .musicTabButton {
