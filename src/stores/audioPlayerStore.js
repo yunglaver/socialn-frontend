@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import {getMyMusic, getOtherMusic} from "../services/music.service.js";
+import {getMyMusic, getOtherMusic, likeSong, removeSong} from "../services/music.service.js";
 
 export const useAudioPlayerStore = create((set) => ({
 
@@ -18,6 +18,14 @@ export const useAudioPlayerStore = create((set) => ({
     fetchAllMusic: async () => {
         const data = await getOtherMusic();
         set({ allSongs: data });
+    },
+
+    fetchLikeSong: async (songId) => {
+        await likeSong(songId);
+    },
+
+    fetchRemoveSong: async (songId) => {
+        await removeSong(songId);
     },
 
     setTrack: (id) => set({

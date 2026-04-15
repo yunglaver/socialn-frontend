@@ -14,7 +14,6 @@ export async function getMyMusic() {
     return await response.json();
 }
 
-
 export async function getOtherMusic() {
     const token = localStorage.getItem('token');
     const response = await apiFetch(
@@ -52,7 +51,25 @@ export async function uploadMusic( audioFile, artistName, songTitle, coverFile, 
     return await response.json();
 }
 
+export const likeSong = async (songId) => {
+    const token = localStorage.getItem('token');
+    return apiFetch(`/music/${songId}/like`, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    });
+};
 
+export async function removeSong(songId) {
+    const token = localStorage.getItem('token');
 
+    const response = await apiFetch(`/music/${songId}`, {
+        method: 'DELETE',
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    });
 
-
+    return await response.json();
+}

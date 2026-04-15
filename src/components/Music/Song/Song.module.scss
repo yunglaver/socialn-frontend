@@ -1,16 +1,18 @@
 .songContainer {
   margin: 10px 10px 0 10px;
+  display: flex;
+  transition: all 0.1s ease;
+  height: 60px; /* Фиксируем высоту здесь */
+  border-radius: 6px;
 }
 
 .button {
   cursor: pointer;
   display: flex;
-  background-color: white;
+  justify-content: space-between;
+  background-color: transparent;
   width: 100%;
-  height: 60px;
-  transition: all 0.1s ease;
-  border-radius: 6px;
-
+  height: 100%; /* Занимает всю высоту контейнера */
 }
 
 .songArtistName {
@@ -22,9 +24,30 @@
   font-size: 17px;
 }
 
+.addButton {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
 
+.addSongWrapper {
+  display: flex;
+  align-items: center;
+}
 
+.addSongIcon {
+  opacity: 1;
+  margin: 0 25px 0 10px;
+}
 
+.addButton:hover{
+
+}
+
+.wrapper {
+  display: flex;
+}
 
 .coverContainer {
   margin: 0 0 0 7px;
@@ -43,26 +66,24 @@
   aspect-ratio: 1 / 1;
   height: 90%;
   position: absolute;
-
   transition: transform 0.1s ease-out;
 }
-.button:hover .playerIcon{
+
+.songContainer:hover .playerIcon{
   display: block;
 }
 
-.button:hover .coverPic{
+.songContainer:hover .coverPic{
   filter: brightness(0.3);
 }
 
-.button:hover {
+.songContainer:hover {
   background-color: #e6e6e6;
 }
-.button:active .playerIcon {
+
+.songContainer:active .playerIcon {
   transform: scale(0.90);
 }
-
-
-
 
 .titleContainer {
   margin-left: 7px;
