@@ -29,6 +29,8 @@ export default function Music() {
     const setPageMy = useAudioPlayerStore(s => s.setPageMy);
     const setPageAll = useAudioPlayerStore(s => s.setPageAll);
     const tracks = currentTab === "my" ? mySongs : allSongs;
+
+
     const parentRef = useRef(null);
 
     const rowVirtualizer = useVirtualizer({

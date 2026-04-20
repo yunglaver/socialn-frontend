@@ -1,0 +1,19 @@
+.chatPage {
+  display: flex;
+  height: 100%;
+}
+
+.chats {
+
+}
+
+.parentScrollBlock {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  overflow: auto;
+  scrollbar-width: none;
+  height: calc(100vh - 50px);
+  width: 200px;
+}

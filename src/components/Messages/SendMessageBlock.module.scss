@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  height: max-content;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding: 12px;
+  flex-shrink: 0;
+}
+
+.sendButton {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 25px;
+  border-radius: 0px;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.textArea {
+  color: #FFFFFF;
+  width: 80%;
+  padding: 10px;
+  border: 0 solid #FFFFFF;
+  margin-right: 10px;
+  background-color: #212121;
+  max-height: 27.5rem !important;
+  resize: none;
+  border-radius: 9px;
+}
+
+.textArea:focus {
+  outline: none;
+}

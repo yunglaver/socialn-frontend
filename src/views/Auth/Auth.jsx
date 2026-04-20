@@ -73,10 +73,12 @@ export const AuthView = () => {
                                 <div className={styles.buttons__wrapper}>
                                     <AuthButton
                                         buttonText={"Sign in"}
-                                        id="auth-signin__button"
                                         onClick={handleLogin}
                                     />
-                                    <AuthButton buttonText={"Register"} id={"register-page__button"} onClick={() => navigate("/register")}/>
+                                    <AuthButton
+                                        buttonText={"Register"}
+                                        onClick={() => navigate("/register")}
+                                    />
                                 </div>
                             </div>
                         </div>

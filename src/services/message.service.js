@@ -14,7 +14,7 @@ export async function getMessages(chatId) {
     return await response.json();
 }
 
-export async function sendMessages(text, chatId) {
+export async function sendMessages(chatId, text) {
     const token = localStorage.getItem('token');
     const response = await apiFetch(`/messages`, {
         method: 'POST',

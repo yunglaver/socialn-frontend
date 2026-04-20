@@ -1,18 +1,14 @@
 import { BASE_API_URL } from "../../../core/api.js";
 import { useAudioPlayerStore } from "../../../stores/audioPlayerStore.js";
 import { useEffect, useRef, useState } from "react";
-
 import styles from "./AudioPlayer.module.scss";
 import pauseIcon from "../../../assets/icons/playerPause.svg";
 import playIcon from "../../../assets/icons/playerPlay.svg";
 import prevIcon from "../../../assets/icons/playerPrev.svg";
 import nextIcon from "../../../assets/icons/playerNext.svg";
-import defaultCoverIcon from "../../../assets/icons/defaultCoverPic.svg";
+import defaultCoverIcon from "../../../assets/icons/defaultCoverPic.webp";
 
 export default function AudioPlayer() {
-
-
-
     const audioRef = useRef(null);
     const currentPlaylist = useAudioPlayerStore(e => e.currentPlaylist);
     const currentTab = useAudioPlayerStore(e => e.currentTab);
@@ -21,6 +17,8 @@ export default function AudioPlayer() {
     const togglePlay = useAudioPlayerStore(e => e.togglePlay);
     const setTrack = useAudioPlayerStore(e => e.setTrack);
     const lastSavedRef = useRef(0);
+    const [progress, setProgress] = useState(0);
+    const [duration, setDuration] = useState(0);
 
     useEffect(() => {
 
@@ -35,10 +33,6 @@ export default function AudioPlayer() {
         }
 
     }, []);
-
-    const [progress, setProgress] = useState(0);
-
-    const [duration, setDuration] = useState(0);
 
     const currentIndex = currentPlaylist.findIndex(t => t.id === playingId);
     const currentTrack = currentPlaylist.find(t => t.id === playingId);
@@ -57,8 +51,6 @@ export default function AudioPlayer() {
         setTrack(currentPlaylist[nextIndex].id);
         useAudioPlayerStore.setState({ isPlaying: true });
     };
-
-
 
     useEffect(() => {
         if (!audioRef.current || !currentTrack) return;
@@ -125,7 +117,6 @@ export default function AudioPlayer() {
         };
 
         audio.addEventListener("timeupdate", handleTimeUpdate);
-
         return () => audio.removeEventListener("timeupdate", handleTimeUpdate);
     }, [currentTrack, isPlaying]);
 
@@ -145,8 +136,6 @@ export default function AudioPlayer() {
 
     }, [currentPlaylist, playingId]);
 
-
-    // отлов двигания по прогресс бару
     const handleSeek = (e) => {
         if (!audioRef.current) return;
         const time = e.target.value;

@@ -19,11 +19,6 @@ export default function Layout() {
     const location = useLocation()
     const navigate = useNavigate()
 
-    async function handleLogout() {
-        await logoutService()
-        navigate("/")
-    }
-
     return (
         <div className={styles.wrapper}>
             <div className={styles.main__wrapper}>
@@ -37,34 +32,37 @@ export default function Layout() {
                         <Button
                             text="Profile"
                             onClick={() => navigate("/m/profile")}
-                            isActive={location.pathname === "/m/profile"}
+                            isActive={location.pathname.startsWith("/m/profile")}
                             iconSrc={profileIcon}
                             iconAlt="profile"
                         />
                         <Button
                             text="Users"
                             onClick={() => navigate("/m/users")}
-                            isActive={location.pathname === "/m/users"}
+                            isActive={location.pathname.startsWith("/m/users")}
                             iconSrc={usersIcon}
                             iconAlt="users"
                         />
                         <Button
                             text="Music"
                             onClick={() => navigate("/m/music")}
-                            isActive={location.pathname === "/m/music"}
+                            isActive={location.pathname.startsWith("/m/music")}
                             iconSrc={musicIcon}
                             iconAlt="users"
                         />
                         <Button
                             text="Chats"
                             onClick={() => navigate("/m/chats")}
-                            isActive={location.pathname === "/m/chats"}
+                            isActive={location.pathname.startsWith("/m/chats")}
                             iconSrc={chatsIcon}
                             iconAlt="chats"
                         />
                         <Button
                             text="Logout"
-                            onClick={handleLogout}
+                            onClick={async () => {
+                                await logoutService()
+                                navigate("/")
+                            }}
                             iconSrc={logoutIcon}
                             iconAlt="logout"
                         />

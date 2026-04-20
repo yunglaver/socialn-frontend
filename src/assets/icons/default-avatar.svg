@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+
+    <circle cx="64" cy="64" r="64" fill="#e0e0e0"/>
+
+    <circle cx="64" cy="48" r="20" fill="#9e9e9e"/>
+
+    <path d="M32 108c0-18 16-30 32-30s32 12 32 30" fill="#9e9e9e"/>
+
+</svg>

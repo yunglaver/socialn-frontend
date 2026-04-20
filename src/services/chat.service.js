@@ -1,9 +1,10 @@
-import {apiFetch} from "../core/api.js";
+import { apiFetch } from "../core/api.js";
 
-export async function getChats() {
+export async function getChats(page = 1) {
     const token = localStorage.getItem('token');
+
     const response = await apiFetch(
-        `/chats`,
+        `/chats?page=${page}&limit=20`,
         {
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -16,6 +17,7 @@ export async function getChats() {
 
 export async function startChat(receiverUserId) {
     const token = localStorage.getItem('token');
+
     const response = await apiFetch("/chats", {
         method: 'POST',
         headers: {
@@ -23,14 +25,9 @@ export async function startChat(receiverUserId) {
             'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
-            receiverUserId: receiverUserId,
+            receiverUserId
         })
     });
 
     return await response.json();
 }
-
-
-
-
-

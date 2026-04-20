@@ -24,7 +24,6 @@ function App() {
         <BrowserRouter>
             <Routes>
 
-                {/* auth */}
                 <Route path="/" element={<AuthView />} />
                 <Route path="/auth" element={<AuthView />} />
                 <Route path="/register" element={<RegisterView />} />
@@ -39,7 +38,7 @@ function App() {
                     <Route path="chats" element={<Chats />}>
 
 
-                        <Route index element={<div>Select chat</div>} />
+                        <Route index element={<div></div>} />
 
 
                         <Route path=":chatId" element={<Messages />} />
