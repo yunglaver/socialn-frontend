@@ -25,7 +25,7 @@ export default function FormatMessageTime(input) {
 
     if (diffInDays >= 0 && diffInDays < 7) {
         return new Intl.DateTimeFormat('ru-RU', {
-            weekday: 'long',
+            weekday: 'short',
         }).format(date)
     }
 

@@ -15,6 +15,11 @@ export const useChatsStore = create((set) => ({
 
     currentChatId: 0,
 
+    setChats: (updater) =>
+        set((state) => ({
+            chats: typeof updater === "function" ? updater(state.chats) : updater,
+        })),
+
     setPageChats: (page) => set({ pageChats: page }),
     setPageMessages: (page) => set({ pageMessages: page }),
 

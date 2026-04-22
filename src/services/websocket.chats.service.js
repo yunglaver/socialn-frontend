@@ -1,11 +1,15 @@
-import { getSocket } from '../core/socket.js';
+import { sendSocketMessage } from "../core/socket.js";
 
 export function openChatWs(chatId) {
+    sendSocketMessage({
+        type: "join_chat",
+        chatId: String(chatId),
+    });
+}
 
-    const socket = getSocket();
-
-    socket.send(JSON.stringify({
-        type: 'join_chat',
-        chatId
-    }));
+export function closeChatWs(chatId) {
+    sendSocketMessage({
+        type: "leave_chat",
+        chatId: String(chatId),
+    });
 }

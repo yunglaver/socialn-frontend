@@ -7,6 +7,10 @@
 
 }
 
+.chatsList {
+  scrollbar-width: none;
+}
+
 .parentScrollBlock {
   display: flex;
   flex-direction: column;
