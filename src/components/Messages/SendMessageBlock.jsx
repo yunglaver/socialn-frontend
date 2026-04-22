@@ -1,6 +1,6 @@
 import styles from "./SendMessageBlock.module.scss"
 
-export default function SendMessageBlock({onKeyDown}) {
+export default function SendMessageBlock({onKeyDown, onClick, inputRef}) {
     return(
         <div
             className={styles.container}
@@ -8,10 +8,12 @@ export default function SendMessageBlock({onKeyDown}) {
             <textarea
                 className={styles.textArea}
                 onKeyDown={onKeyDown}
+                ref={inputRef}
                 placeholder="Enter your message here..."
             />
             <button
                 className={styles.sendButton}
+                onClick={onClick}
             >
                 Send
             </button>

@@ -1,6 +1,6 @@
 import UploadTrackModal from "../../components/Music/UploadMusic/UploadTrackModal.jsx";
 import Song from "../../components/Music/Song/Song.jsx";
-import { useAudioPlayerStore } from "../../stores/audioPlayerStore.js"
+import { useAudioPlayerStore } from "../../stores/audioplayer.store.js"
 import styles from "./Music.module.scss";
 import { useEffect } from "react";
 import { BASE_API_URL } from "../../core/api.js";

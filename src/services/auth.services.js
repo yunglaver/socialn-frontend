@@ -57,7 +57,6 @@ export async function logoutService() {
     }
 
     localStorage.clear()
-    console.log(localStorage)
     return await response.json();
 }
 

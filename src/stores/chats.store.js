@@ -30,13 +30,13 @@ export const useChatsStore = create((set) => ({
         }));
     },
 
-    fetchMessages: async (page = 1) => {
-        const data = await getMessages(page);
+    fetchMessages: async (chatId, page = 1) => {
+        const data = await getMessages(chatId, page);
 
         set(state => ({
             messages: page === 1
-                ? data
-                : [...state.messages, ...data],
+                ? data.slice().reverse()
+                : [...data.slice().reverse(), ...state.messages],
             pageMessages: page,
             hasMoreMessages: data.length > 0
         }));

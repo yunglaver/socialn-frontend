@@ -10,7 +10,7 @@ import musicIcon from "../../assets/icons/music.svg"
 import chatsIcon from "../../assets/icons/chats.svg"
 import profileIcon from "../../assets/icons/profile.svg"
 import logoutIcon from "../../assets/icons/logout.svg"
-import {useAudioPlayerStore} from "../../stores/audioPlayerStore.js";
+import {useAudioPlayerStore} from "../../stores/audioplayer.store.js";
 
 export default function Layout() {
 

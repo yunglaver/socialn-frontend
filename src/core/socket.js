@@ -2,7 +2,7 @@ import { BACKEND_ORIGIN } from "./api.js";
 
 export let socket = null;
 let listeners = [];
-let isAuth = false; // ✅ флаг авторизации
+let isAuth = false;
 
 export function connectSocket() {
     const token = localStorage.getItem("token");
@@ -11,9 +11,7 @@ export function connectSocket() {
         return;
     }
 
-
     socket = new WebSocket(`ws://${BACKEND_ORIGIN}`)
-
 
     socket.onopen = () => {
         console.log("socket is connected");
@@ -24,11 +22,8 @@ export function connectSocket() {
         }));
     };
 
-
     socket.onmessage = (event) => {
         const data = JSON.parse(event.data);
-
-
 
         if (data.type === "auth_success") {
             isAuth = true;
@@ -39,7 +34,6 @@ export function connectSocket() {
         listeners.forEach((fn) => fn(data));
     };
 
-
     socket.onclose = () => {
         console.log("WS disconnected");
         isAuth = false;
@@ -47,7 +41,6 @@ export function connectSocket() {
     };
 }
 
-// ✅ единая точка отправки
 export function sendSocketMessage(data) {
     const msg = JSON.stringify(data);
 

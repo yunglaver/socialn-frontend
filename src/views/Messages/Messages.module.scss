@@ -8,6 +8,17 @@
   background-size: cover;
 }
 
-.sendBlock {
+.parentScrollBlock {
+  height: calc(100vh - 126px);
+  overflow-y: auto;
+  min-height: 0;
+  margin: 0 10px 0 10px;
+}
 
+.sendBlock {
+  flex-shrink: 0;
+}
+
+.messagesContainer {
+  scrollbar-width: none;
 }

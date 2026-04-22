@@ -3,7 +3,7 @@ import styles from "./UploadTrackModal.module.scss"
 import TrackFileStep from "./TrackFileStep.jsx"
 import TrackDetailsStep from "./TrackDetailsStep.jsx"
 import closeIcon from "../../../assets/icons/close.svg"
-import {useAudioPlayerStore} from "../../../stores/audioPlayerStore.js";
+import {useAudioPlayerStore} from "../../../stores/audioplayer.store.js";
 
 
 export default function UploadTrackModal() {

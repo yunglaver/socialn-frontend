@@ -1,5 +1,5 @@
 import { BASE_API_URL } from "../../../core/api.js";
-import { useAudioPlayerStore } from "../../../stores/audioPlayerStore.js";
+import { useAudioPlayerStore } from "../../../stores/audioplayer.store.js";
 import { useEffect, useRef, useState } from "react";
 import styles from "./AudioPlayer.module.scss";
 import pauseIcon from "../../../assets/icons/playerPause.svg";
@@ -59,10 +59,8 @@ export default function AudioPlayer() {
 
         audio.onloadedmetadata = () => {
             const saved = JSON.parse(localStorage.getItem("player"));
-            console.log('сейвд', saved)
             if (saved && saved.playingId === playingId) {
                 audio.currentTime = saved.time;
-                console.log('подгрузил с saved', saved.time)
             } else {
                 audio.currentTime = 0;
             }
@@ -85,7 +83,6 @@ export default function AudioPlayer() {
     useEffect(() => {
         const audio = audioRef.current;
         if (!audio || !currentTrack) return;
-        console.log('audio & curTr', audio, currentTrack)
         const save = () => {
             const time = audio.currentTime;
             const now = Date.now();
@@ -98,10 +95,9 @@ export default function AudioPlayer() {
                     currentPlaylist
                 }));
                 lastSavedRef.current = now;
-                console.log('log секунды', audio.currentTime)
+
             }
         };
-        console.log('audio & curTr', audio.currentTime, currentTrack)
         audio.addEventListener("timeupdate", save);
 
         return () => audio.removeEventListener("timeupdate", save);

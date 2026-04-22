@@ -9,7 +9,6 @@ export default function TrackFileStep({onChange}) {
     useEffect(() => {
         const handleDragOver = (e) => {
             e.preventDefault();
-            console.log("файл над страницей");
         };
 
         window.addEventListener("dragover", handleDragOver);

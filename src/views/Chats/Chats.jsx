@@ -3,7 +3,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 import styles from "./Chats.module.scss";
 import Chat from "../../components/Chats/Chat";
 import { useVirtualizer } from "@tanstack/react-virtual";
-import { useChatsStore } from "../../stores/ChatsStore.js";
+import { useChatsStore } from "../../stores/chats.store.js";
 import { BASE_API_URL } from "../../core/api.js";
 import defaultAvatar from "../../assets/icons/default-avatar.svg"
 
@@ -22,14 +22,8 @@ export default function Chats() {
 
     useEffect(() => {
         void fetchChats(1);
-        console.log('ЧАТЫ:',chats)
     }, []);
 
-    useEffect(() => {
-
-        console.log('ЧАТЫ:',chats)
-
-    }, [chats]);
 
     useEffect(() => {
         if (!currentChatId) return;
@@ -44,7 +38,6 @@ export default function Chats() {
     });
     const virtualItems = rowVirtualizer.getVirtualItems();
 
-    // infinite scroll
     useEffect(() => {
         const lastItem = virtualItems[virtualItems.length - 1];
         if (!lastItem) return;
@@ -58,7 +51,6 @@ export default function Chats() {
 
     return (
         <div className={styles.chatPage}>
-
             <div
                 ref={parentRef}
                 className={styles.parentScrollBlock}

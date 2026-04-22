@@ -1,0 +1,72 @@
+.messageArea {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+.areaOutgoing {
+  justify-content: flex-end;
+}
+
+.areaIncoming {
+  justify-content: flex-start;
+}
+
+.messageContainer {
+  width: fit-content;
+  padding: 6px 8px;
+  box-sizing: border-box;
+}
+
+.containerIncoming {
+  border-radius: 12px 12px 12px 0;
+  background-color: #FFFFFF;
+}
+
+.containerOutgoing {
+  border-radius: 12px 12px 0 12px;
+  background-color: #E3FEE1;
+}
+
+.textContainer {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.messageText {
+  color: black;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.3;
+  display: block;
+  white-space: pre-line;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+
+.messageTime {
+  color: #828282;
+  font-size: 8px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin: 0 0 0 2px
+}
+
+.messageTail {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.tailOutgoing {
+
+}
+
+.tailIncoming {
+
+}
