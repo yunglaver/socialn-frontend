@@ -41,8 +41,7 @@
   margin: 0 25px 0 10px;
 }
 
-.addButton:hover{
-
+.addButton:hover {
 }
 
 .wrapper {
@@ -69,11 +68,11 @@
   transition: transform 0.1s ease-out;
 }
 
-.songContainer:hover .playerIcon{
+.songContainer:hover .playerIcon {
   display: block;
 }
 
-.songContainer:hover .coverPic{
+.songContainer:hover .coverPic {
   filter: brightness(0.3);
 }
 
@@ -82,7 +81,7 @@
 }
 
 .songContainer:active .playerIcon {
-  transform: scale(0.90);
+  transform: scale(0.9);
 }
 
 .titleContainer {

@@ -1,45 +1,29 @@
-import { useState } from "react";
-import styles from "./TrackFileStep.module.scss"
-import { useEffect } from "react";
+import { useState } from 'react';
+import styles from './TrackFileStep.module.scss';
+import { useEffect } from 'react';
 
+export default function TrackFileStep({ onChange }) {
+  useEffect(() => {
+    const handleDragOver = (e) => {
+      e.preventDefault();
+    };
 
+    window.addEventListener('dragover', handleDragOver);
 
-export default function TrackFileStep({onChange}) {
+    return () => {
+      window.removeEventListener('dragover', handleDragOver);
+    };
+  }, []);
 
-    useEffect(() => {
-        const handleDragOver = (e) => {
-            e.preventDefault();
-        };
+  const [isDragging, setIsDragging] = useState(false);
 
-        window.addEventListener("dragover", handleDragOver);
+  return (
+    <div className={styles.uploadWindowWrapper}>
+      <label className={styles.uploadWindow}>
+        <span>Upload</span>
 
-        return () => {
-            window.removeEventListener("dragover", handleDragOver);
-        };
-    }, []);
-
-    const [isDragging, setIsDragging] = useState(false);
-
-
-
-    return (
-            <div
-                className={styles.uploadWindowWrapper}
-            >
-                <label
-                    className={styles.uploadWindow}
-                >
-                    <span>Upload</span>
-
-                    <input
-                        type="file"
-                        onChange={onChange}
-                        className={styles.uploadInput}
-                    />
-                </label>
-            </div>
-    );
+        <input type="file" onChange={onChange} className={styles.uploadInput} />
+      </label>
+    </div>
+  );
 }
-
-
-

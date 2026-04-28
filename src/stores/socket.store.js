@@ -1,9 +1,9 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 export const useSocketStore = create((set) => ({
-    isConnected: false,
-    isAuthed: false,
+  isConnected: false,
+  isAuthed: false,
 
-    setConnected: (value) => set({ isConnected: value }),
-    setAuthed: (value) => set({ isAuthed: value }),
+  setConnected: (value) => set({ isConnected: value }),
+  setAuthed: (value) => set({ isAuthed: value }),
 }));

@@ -6,14 +6,12 @@
   flex-direction: column;
   align-items: center;
 
-
   @include mobile {
     height: 260px;
     width: 300px;
   }
 
   @include laptop {
-
   }
 
   @include tablet {
@@ -22,7 +20,6 @@
   }
 
   @include desktop {
-
   }
 }
 
@@ -35,7 +32,6 @@
   }
 
   @include laptop {
-
   }
 
   @include tablet {
@@ -44,12 +40,11 @@
   }
 
   @include desktop {
-
   }
 }
 
 .background {
-  background-image: url("../../assets/images/auth_bg.png");
+  background-image: url('../../assets/images/auth_bg.png');
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -59,7 +54,7 @@
   width: 100vw;
   height: 100vh;
   background: rgba(255, 255, 255, 0.05); /* Почти прозрачный */
-  backdrop-filter: blur(12px);          /* Радиус размытия */
+  backdrop-filter: blur(12px); /* Радиус размытия */
   -webkit-backdrop-filter: blur(10px); /* Для поддержки Safari */
   display: flex;
   flex-direction: column;
@@ -79,18 +74,13 @@
   }
 
   @include laptop {
-
   }
 
   @include tablet {
-
   }
 
   @include desktop {
-
   }
-
-
 }
 
 .buttons__wrapper {

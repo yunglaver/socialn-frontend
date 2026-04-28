@@ -9,19 +9,15 @@
   width: 100%;
 
   @include mobile {
-
   }
 
   @include laptop {
-
   }
 
   @include tablet {
-
   }
 
   @include desktop {
-
   }
 }
 
@@ -32,13 +28,11 @@
 .text {
   color: black;
 
-
   @include tablet {
     font-size: 13px;
   }
 
   @include desktop {
-
   }
 }
 
@@ -47,7 +41,6 @@
 }
 
 .button__container {
-
 }
 
 .icon {
@@ -61,8 +54,5 @@
   }
 
   @include desktop {
-
   }
 }
-
-
