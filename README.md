@@ -1,16 +1,79 @@
-# React + Vite
+# SocialN Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Клиентская часть SPA-соцсети.
 
-Currently, two official plugins are available:
+## что есть
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- чаты в реальном времени (websocket)
+- отправка и получение сообщений
+- infinite scroll (сообщения / чаты / пользователи / музыка)
+- список пользователей + создание чата
+- профиль с аватаркой (загрузка / смена)
+- музыка:
+  - список треков
+  - лайки
+  - загрузка
+  - закреплённый плеер (работает между вкладками)
+- плеер живёт в zustand и не сбрасывается при навигации
+- backend адрес настраивается через `.env`
+---
 
-## React Compiler
+## стек
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+react, vite, react-router-dom, zustand, websocket, react-virtuoso, @tanstack/react-virtual, sass
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## запуск
+
+```bash
+git clone https://github.com/your-username/socialn-frontend.git
+cd socialn-frontend
+npm install
+````
+
+### env
+
+создай `.env` в корне:
+
+```bash
+cp .env.example .env
+```
+
+запуск:
+
+```bash
+npm run dev
+```
+Backend должен быть запущен
+
+---
+
+## как устроено
+
+* REST API — пользователи, музыка и т.д.
+* WebSocket — сообщения
+* Zustand — глобальный стейт (плеер, списки и т.д.)
+* виртуализация — через react-virtuoso и tanstack virtual
+
+---
+
+## страницы
+
+* /login /register
+* /profile
+* /messages
+* /users
+* /music
+
+---
+
+## backend
+
+https://github.com/yunglaver/socialn-backend
+
+---
+
+## детали
+
+
