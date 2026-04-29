@@ -2,7 +2,7 @@
   margin: 10px 10px 0 10px;
   display: flex;
   transition: all 0.1s ease;
-  height: 60px; /* Фиксируем высоту здесь */
+  height: 60px;
   border-radius: 6px;
 }
 
@@ -12,7 +12,7 @@
   justify-content: space-between;
   background-color: transparent;
   width: 100%;
-  height: 100%; /* Занимает всю высоту контейнера */
+  height: 100%;
 }
 
 .songArtistName {

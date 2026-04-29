@@ -62,4 +62,14 @@ export const useAudioPlayerStore = create((set) => ({
     set((state) => ({
       isPlaying: !state.isPlaying,
     })),
+
+  resetPlayer: () =>
+      set({
+        mySongs: [],
+        allSongs: [],
+        currentTab: 'my',
+        currentPlaylist: [],
+        playingId: null,
+        isPlaying: false,
+      }),
 }));

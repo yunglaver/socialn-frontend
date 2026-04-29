@@ -1,5 +1,6 @@
 import { apiFetch } from '../core/api.js';
 import { connectSocket, getSocket } from '../core/socket.js';
+import {useAudioPlayerStore} from "../stores/audioplayer.store.js"
 
 export async function authService(login, password) {
   const response = await apiFetch('/auth', {
@@ -40,6 +41,8 @@ export async function registerService(login, password) {
 }
 
 export async function logoutService() {
+
+
   const token = localStorage.getItem('token');
 
   const response = await apiFetch('/logout', {
@@ -53,7 +56,8 @@ export async function logoutService() {
   if (socket) {
     socket.close(1000, 'offline');
   }
-
   localStorage.clear();
+  const resetPlayer = useAudioPlayerStore.getState().resetPlayer;
+  resetPlayer()
   return await response.json();
 }

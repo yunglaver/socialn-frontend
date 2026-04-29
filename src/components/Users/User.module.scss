@@ -1,0 +1,43 @@
+.container {
+
+  display: flex;
+  height: 80px;
+  align-items: center;
+}
+
+.avatarWrapper {
+  height: 80%;
+  width: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.avatarImg {
+  border-radius: 50%;
+  height: 100%;
+
+  width: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.userName {
+
+}
+
+.textContentWrapper {
+  margin: 0 0 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.toChatButton {
+  margin-top: 5px;
+  color: #868686;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+}

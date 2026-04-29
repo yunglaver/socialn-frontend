@@ -1,0 +1,18 @@
+.container {
+
+}
+
+.users {
+  margin: 0 10px 0 10px
+}
+
+.parentScrollBlock {
+  overflow: auto;
+  scrollbar-width: none;
+  height: calc(100vh - 50px);
+}
+
+.parentScrollBlock::-webkit-scrollbar {
+  display: none;
+}
+
